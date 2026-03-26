@@ -7,6 +7,8 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<p>Hello World</p>
+		<?php
+		include("pages/login.php");
+		?>
 	</body>
 </html>
