@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+
+.experience-heading {
+    font-family: 'Great Vibes', cursive !important;
+    font-size: 4.5rem;
+    text-align: left;
+    color: #0021a5;
+    font-weight: 700;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.highlight-word {
+            color: #fe7d1a;
+}
