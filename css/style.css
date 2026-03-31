@@ -28,7 +28,7 @@ body {
 }
 
 .navbar-nav .nav-link.dropdown-toggle::after {
-    color: #0021A5;
+    color: #0021a5;
     border-top-color: #0021A5; 
     vertical-align: middle;
 }
