@@ -60,7 +60,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/js.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
 
-		<div class="paper-container">
+		<div class="paper-container" style="padding-left: 15%">
         <div class="row">
             <div class="col text-center">
                 <h1 class="experience-heading">
@@ -94,7 +94,11 @@
 			</div>	
 		
 			<div class="col-md-6 image-column">
-				<img src="../assets/uf_residence_img.jpg" alt="UF Logo">
+                <div style="padding-left: 90px; align-items: center; justify-content: center;">
+                    <img src="../assets/uf_residence_img.jpg" alt="UF Logo" style="height: 17%; padding-bottom: 50px; padding-left: 35px">
+                    
+                    <img src="../assets/residence_hall_placeholder_img.png" class="border border-secondary border-5" alt="UF Logo" style="height: 15%">
+                </div>
 			</div>
 		</div>
 
