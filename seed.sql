@@ -68,10 +68,25 @@ INSERT INTO location (location_id, place_name, latitude, longitude, address, map
   (67, 'College of Pharmacy', 29.6410, -82.3465, 'G-232 HPNP Complex, Gainesville, FL 32610', NULL),
   (68, 'College of Public Health and Health Professions', 29.6410, -82.3458, 'G-205 HPNP Complex, Gainesville, FL 32610', NULL),
   (69, 'College of Veterinary Medicine', 29.6360, -82.3480, '2015 SW 16th Ave, Gainesville, FL 32610', NULL),
-  (70, '', , , '', NULL),
-  (71, '', , , '', NULL),
-  (72, '', , , '', NULL),
-  ();
+  (70, 'Pressly Stadium', 29.6498, -82.3540, '325 Woodlawn Dr, Gainesville, FL 32611', NULL),
+  (71, 'Condron Family Ballpark', 29.6370, -82.3680, '2800 Citrus Rd, Gainesville, FL 32611', NULL),
+  (72, 'Museum Road', 29.6450, -82.3550, 'Museum Rd, Gainesville, FL 32611', NULL),
+  (73, 'Downtown', 29.6516, -82.3248, 'Downtown Gainesville, FL 32601', NULL),
+  (74, 'Hippodrome State Theatre', 29.6519, -82.3250, '25 SE 2nd Pl, Gainesville, FL 32601', NULL),
+  (75, 'Midtown', 29.6520, -82.3380, 'W University Ave & NW 18th St, Gainesville, FL 32603', NULL),
+  (76, 'Paynes Prairie', 29.5500, -82.3200, '100 Savannah Blvd, Micanopy, FL 32667', NULL),
+  (77, '34th Street Wall', 29.6380, -82.3700, 'SW 34th St, Gainesville, FL 32607', NULL),
+  (78, 'The Brown Center for Leadership and Service', 29.6465, -82.3477, 'Reitz Union Suite 2004, 655 Reitz Union Dr, Gainesville, FL 32611', NULL),
+  (79, 'Allan and Cathy Hitchcock Field & Fork Pantry', 29.6478, -82.3440, 'Near Marston Science Library, Gainesville, FL 32611', NULL),
+  (80, 'Bull Gator Statue', 29.6500, -82.3486, 'Ben Hill Griffin Stadium, Stadium Rd, Gainesville, FL 32611', NULL),
+  (81, 'Chira Family Heisman Plaza', 29.6502, -82.3490, 'Ben Hill Griffin Stadium, Stadium Rd, Gainesville, FL 32611', NULL),
+  (82, 'Heavener Football Complex', 29.6490, -82.3510, 'Gale Lemerand Dr, Gainesville, FL 32611', NULL),
+  (83, 'Fletcher Hall', 29.6518, -82.3445, '162 Fletcher Dr, Gainesville, FL 32611', NULL),
+  (84, 'Leigh Hall', 29.6500, -82.3418, '165 Buckman Dr, Gainesville, FL 32611', NULL),
+  (85, 'Sledd Hall', 29.6530, -82.3440, '191 Fletcher Dr, Gainesville, FL 32612', NULL),
+  (86, 'Bryan Hall', 29.6510, -82.3440, '1384 Union Rd, Gainesville, FL 32611', NULL),
+  (87, 'Matherly Hall', 29.6515, -82.3450, '1405 W University Ave, Gainesville, FL 32611', NULL);
+
 
 INSERT INTO traditions (tradition_id, uq_user_tradition_name, description, category, fbook_pagenum) VALUES
   ('Listen to the Chimes of Century Tower', 
