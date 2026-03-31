@@ -42,12 +42,23 @@ CREATE TABLE traditions (
   tradition_name     VARCHAR(100)  NOT NULL,
   description    TEXT          DEFAULT NULL,
   category       VARCHAR(50)   DEFAULT NULL,
-  location_id    INT           DEFAULT NULL,
   fbook_pagenum  SMALLINT      DEFAULT NULL,
   PRIMARY KEY (tradition_id),
   CONSTRAINT fk_tradition_location
     FOREIGN KEY (location_id) REFERENCES location(location_id)
     ON DELETE SET NULL
+);
+
+CREATE TABLE tradition_locations (
+  tradition_id  INT NOT NULL,
+  location_id   INT NOT NULL,
+  PRIMARY KEY (tradition_id, location_id),
+  CONSTRAINT fk_tl_tradition
+    FOREIGN KEY (tradition_id) REFERENCES traditions(tradition_id)
+    ON DELETE CASCADE,
+  CONSTRAINT fk_tl_location
+    FOREIGN KEY (location_id) REFERENCES location(location_id)
+    ON DELETE CASCADE
 );
 
 CREATE TABLE completion (
