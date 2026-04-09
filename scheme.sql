@@ -5,13 +5,14 @@ CREATE DATABASE IF NOT EXISTS fbook_online
 USE fbook_online;
 
 CREATE TABLE users (
-  user_id        INT           NOT NULL AUTO_INCREMENT,
-  username       VARCHAR(50)   NOT NULL UNIQUE,
-  name           VARCHAR(100)  NOT NULL,
-  email          VARCHAR(100)  NOT NULL UNIQUE,
-  password       VARCHAR(255)  NOT NULL,
+  user_id         INT          NOT NULL AUTO_INCREMENT,
+  username        VARCHAR(50)  NOT NULL UNIQUE,
+  name            VARCHAR(100) NOT NULL,
+  email           VARCHAR(100) NOT NULL UNIQUE,
+  password        VARCHAR(255) NOT NULL,
   graduation_year YEAR         NOT NULL,
-  created_at     DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  profile_pic_url VARCHAR(255) DEFAULT NULL,
+  created_at      DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (user_id)
 );
 
@@ -38,15 +39,17 @@ CREATE TABLE location (
 );
 
 CREATE TABLE traditions (
-  tradition_id   INT           NOT NULL AUTO_INCREMENT,
-  tradition_name     VARCHAR(100)  NOT NULL,
-  description    TEXT          DEFAULT NULL,
-  category       VARCHAR(50)   DEFAULT NULL,
-  fbook_pagenum  SMALLINT      DEFAULT NULL,
-  PRIMARY KEY (tradition_id),
-  CONSTRAINT fk_tradition_location
-    FOREIGN KEY (location_id) REFERENCES location(location_id)
-    ON DELETE SET NULL
+  tradition_id    INT           NOT NULL AUTO_INCREMENT,
+  tradition_name  VARCHAR(100)  NOT NULL,
+  tag_text        TEXT          NOT NULL,
+  description     TEXT          NOT NULL,
+  directions      TEXT          NOT NULL,
+  requires_photo  TINYINT(1)    NOT NULL DEFAULT 0,  -- 1 = tradition needs a photo upload
+  requires_answer TINYINT(1)    NOT NULL DEFAULT 0,
+  category        VARCHAR(50)   DEFAULT NULL,
+  fbook_pagenum   SMALLINT      DEFAULT NULL,
+  thumbnail_url   VARCHAR(255)  DEFAULT NULL,
+  PRIMARY KEY (tradition_id)
 );
 
 CREATE TABLE tradition_locations (
@@ -81,8 +84,7 @@ CREATE TABLE completion (
 CREATE TABLE photos (
   photo_id      INT          NOT NULL AUTO_INCREMENT,
   user_id       INT          NOT NULL,
-  completion_id INT          DEFAULT NULL,
-  tradition_id  INT          DEFAULT NULL,
+  completion_id INT          NOT NULL,          -- ← no longer nullable, every photo belongs to a completion
   file_path     VARCHAR(255) NOT NULL,
   uploaded_at   DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (photo_id),
@@ -91,18 +93,13 @@ CREATE TABLE photos (
     ON DELETE CASCADE,
   CONSTRAINT fk_photo_completion
     FOREIGN KEY (completion_id) REFERENCES completion(comp_id)
-    ON DELETE SET NULL,
-  CONSTRAINT fk_photo_tradition
-    FOREIGN KEY (tradition_id) REFERENCES traditions(tradition_id)
-    ON DELETE SET NULL
+    ON DELETE CASCADE                           -- ← changed to CASCADE, no point keeping a photo if completion is deleted
 );
 
 
 CREATE INDEX idx_completion_user     ON completion(user_id);
 
 
+CREATE INDEX idx_completion_user      ON completion(user_id);
 CREATE INDEX idx_completion_tradition ON completion(tradition_id);
-
-
-CREATE INDEX idx_photo_completion    ON photos(completion_id);
-CREATE INDEX idx_photo_tradition     ON photos(tradition_id);
+CREATE INDEX idx_photo_completion     ON photos(completion_id);
