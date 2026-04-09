@@ -1,14 +1,21 @@
 <?php
-  $title = "Login Page";
+  $title = "Achievements";
 ?>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title><?php echo $title; ?></title>
 		<link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/catalog.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        
 	</head>
-	<body class="century-tower-bg-page">
+	<body>
         <nav class="navbar navbar-expand-lg uf-gradient px-3">
             <a class="navbar-brand" href="../index.php">
                 <img src="../assets/uf_logo.png" alt="UF Logo" style="height: 40px; width: auto;">
@@ -16,13 +23,9 @@
 
             <div class="navbar-nav d-flex flex-row ms-auto">
                 <div class="nav-item dropdown px-2">
-                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-white" href="../index.php">
                         Home
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                    </ul>
                 </div>
                 
                 <div class="nav-item dropdown px-2">
@@ -30,16 +33,17 @@
                         F-Book
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                    </ul>
+                        <li><a class="dropdown-item" href="catalog.php">My F-Book</a></li>
+                    </ul> 
                 </div>
                 
                 <div class="nav-item dropdown px-2">
-                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Achievements
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="leaderboard.php">Leaderboard</a></li>
+                        <li><a class="dropdown-item" href="achievements.php">View Achievements</a></li> 
                     </ul>
                 </div>
                 
@@ -48,40 +52,15 @@
                         Connect
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Event</a></li>
                     </ul>
                 </div>
                 <a class="btn btn-primary" href="#" role="button">Logout</a>
             </div>
         </nav>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
         <main class="main-content">
-
-        <h1 class="text-center mt-5 text-white" style="-webkit-text-stroke: 1px gray; font-size: 50px; padding-bottom: 40px;">Get Ready To Start Your F-Book Journey</h1>
-        <div class="mb-3">
-        <input type="email" class="form-control" id="emailInput" placeholder="Email or Phone Number">
-        </div>
-        <div class="mb-3">
-        <input type="password" class="form-control" id="passwordInput" placeholder="Password">
-        </div>
-
-        <div class="form-check text-center d-flex align-items-center justify-content-center">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label text-white ms-2" for="flexCheckDefault">
-            Remember Me
-        </label>
-        </div>
-
-        <p class="fst-italic custom-text-shadow text-center" style="color: #9babe8">
-        Forgot Password?
-        </p>
-
-        <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-primary rounded-0 px-5" style="background-color: #1c233f; font-family: 'Times New Roman', Times, serif;"  onclick="window.location.href='/pages/dashboards.php'">Join Now</button>
-        </div>
         </main>
-
         <footer class="dashboard-footer">
             <div class="footer-left">
                 <img src="../assets/uf_logo_with_slogan.png" alt="UF Logo with Slogan">
@@ -108,5 +87,6 @@
             </div>
 
         </footer>
+        
 	</body>
 </html>
