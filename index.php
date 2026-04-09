@@ -13,20 +13,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg uf-gradient px-3 py-2">
-        <a class="navbar-brand" href="#">
+    <nav class="navbar navbar-expand-lg uf-gradient px-3 py-2 fixed-top">
+        <a class="navbar-brand" href="index.php">
             <img src="assets/uf_logo.png" alt="UF Logo">
         </a>
 
         <div class="navbar-nav d-flex flex-row ms-auto align-items-center">
 
             <div class="nav-item dropdown px-2">
-                <a class="nav-link dropdown-toggle fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle fw-semibold" href="index.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Home
                 </a>
-                <ul class="dropdown-menu dropdown-menu-end">
+                <!-- <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="#">Overview</a></li>
-                </ul>
+                </ul> -->
             </div>
 
             <div class="nav-item dropdown px-2">
@@ -34,8 +34,9 @@
                     F-Book
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#">My F-Book</a></li>
-                </ul>
+                    <li><a class="dropdown-item" href="pages/catalog.php">My F-Book</a></li>
+                </ul> 
+                <!-- NEEDED!!! Redirect to login page if a user session isn't started -->
             </div>
 
             <div class="nav-item dropdown px-2">
@@ -43,7 +44,8 @@
                     Achievements
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#">View Achievements</a></li>
+                    <li><a class="dropdown-item" href="pages/leaderboard.php">Leaderboard</a></li>
+                    <li><a class="dropdown-item" href="pages/achievements.php">View Achievements</a></li> 
                 </ul>
             </div>
 
@@ -51,6 +53,7 @@
                 <a class="nav-link dropdown-toggle fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Connect
                 </a>
+                <!-- NEEDED!!! Deciding on that this header with contain -->
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="#">Events</a></li>
                 </ul>
@@ -60,7 +63,7 @@
         </div>
     </nav>
 
-    <main class="dashboard-wrapper">
+    <main class="main-content">
 
         <!-- Hero -->
         <section class="hero-section">
@@ -88,8 +91,8 @@
             </button>
 
             <div class="activity-card">
-                <img src="assets/chimes.png" alt="Experience Life on Campus" onclick="window.location.href='/pages/residence_activity.php'">
-                <p>Experience<br>Life on Campus</p>
+                <img src="assets/chimes.png" alt="Listen to the Chimes of Century Tower">
+                <p>Listen to the Chimes<br>of Century Tower</p>
             </div>
 
             <div class="activity-card">

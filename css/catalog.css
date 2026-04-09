@@ -1,0 +1,84 @@
+.catalog-header {
+    padding: 50px 0 20px 0;
+    text-align: center;
+}
+
+.catalog-title {
+    font-family: 'Allura', cursive;
+    font-size: 72px;
+    color: #0021A5;
+    letter-spacing: 1px;
+}
+
+.catalog-subtitle {
+    font-size: 20px;
+    color: #555;
+    margin-top: -10px;
+}
+
+.tradition-card {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.tradition-card:hover {
+    transform: translateY(-6px);
+}
+
+.tradition-img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.checkbox-overlay {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.checkbox-overlay input {
+    width: 35px;
+    height: 35px;
+    cursor: default;
+}
+
+.card-body {
+    text-align: center;
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+}
+
+.tagline {
+    font-size: 16px;
+    color: #444;
+}
+
+.page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrap {
+    flex: 1;
+}
+
+.footer-custom {
+    background-color: #0021A5;
+    color: white;
+    padding: 25px 0;
+}
+
+.footer-custom img {
+    height: 60px;
+}

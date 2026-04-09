@@ -1,63 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Source+Sans+3:wght@400;600;700&display=swap');
-
-:root {
-    --uf-blue:      #0021A5;
-    --uf-orange:    #FA4616;
-    --uf-orange-lt: #fe7d1a;
-    --uf-gold:      #ebd1b6;
-    --nav-gradient-start: #ebd1b6;
-    --nav-gradient-end:   #ff6a00;
-    --footer-bg:    #003087;
-    --white:        #ffffff;
-    --card-shadow:  0 4px 18px rgba(0,0,0,0.13);
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-    font-family: 'Source Sans 3', sans-serif;
-    background: #f5f5f5;
-    overflow-x: hidden;
-}
-
-/* navbar */
-.navbar.uf-gradient {
-    background: linear-gradient(90deg, var(--nav-gradient-start) 0%, var(--nav-gradient-end) 100%);
-    border-bottom: 3px solid #000;
-    padding: 0.55rem 1.5rem;
-}
-
-.navbar .navbar-brand img { height: 42px; }
-
-.navbar-nav .nav-link {
-    color: var(--uf-blue) !important;
-    font-weight: 700;
-    font-size: 1rem;
-    font-family: 'Source Sans 3', sans-serif;
-    letter-spacing: 0.01em;
-    padding: 0.5rem 0.75rem;
-    transition: color 0.2s;
-}
-
-.navbar-nav .nav-link:hover { color: #fff !important; }
-
-/* dropdown caret color */
-.navbar-nav .nav-link.dropdown-toggle::after {
-    border-top-color: var(--uf-blue);
-    vertical-align: middle;
-}
-
-/* sign-in button */
-.sign-in-btn {
-    background-color: var(--uf-blue);
-    color: var(--white) !important;
-    font-weight: 700;
-    border-radius: 6px;
-    padding: 0.4rem 1.2rem;
-    border: none;
-    transition: background 0.2s;
-}
-.sign-in-btn:hover { background-color: #001580; }
+/* header and root styling moved to style.css */
 
 /* hero section */
 .dashboard-wrapper { background: #fff; }
@@ -179,51 +120,7 @@ body {
     opacity: 0.85;
 }
 
-/* footer */
-.dashboard-footer {
-    background-color: var(--footer-bg);
-    border-top: 2px solid #000;
-    padding: 1.1rem 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    min-height: 100px;
-}
-
-.footer-left img { height: 76px; width: auto; }
-
-.footer-center p,
-.footer-right p {
-    color: var(--white);
-    font-size: 0.82rem;
-    margin: 0;
-    line-height: 1.7;
-}
-
-.footer-heading {
-    font-weight: 700 !important;
-    font-size: 0.78rem !important;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-.social-icons {
-    display: flex;
-    gap: 0.6rem;
-    margin-top: 0.3rem;
-}
-
-.social-icons img {
-    height: 34px;
-    width: 34px;
-    object-fit: contain;
-    border-radius: 50%;
-    background: #fff;
-    padding: 3px;
-    transition: opacity 0.2s;
-}
-.social-icons img:hover { opacity: 0.8; }
+/* footer styling moved to style.css */
 
 @media (max-width: 768px) {
     .hero-section { flex-direction: column; }
