@@ -19,13 +19,9 @@
 
             <div class="navbar-nav d-flex flex-row ms-auto">
                 <div class="nav-item dropdown px-2">
-                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-white" href="../index.php" role="button">
                         Home
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                    </ul>
                 </div>
                 
                 <div class="nav-item dropdown px-2">
@@ -33,16 +29,17 @@
                         F-Book
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="catalog.php">My F-Book</a></li>
                     </ul>
                 </div>
                 
                 <div class="nav-item dropdown px-2">
-                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Achievements
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="leaderboard.php">Leaderboard</a></li>
+                        <li><a class="dropdown-item" href="achievements.php">View Achievements</a></li> 
                     </ul>
                 </div>
                 
@@ -51,10 +48,9 @@
                         Connect
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Events</a></li>
                     </ul>
                 </div>
-                <a class="btn btn-primary" href="#" role="button">Logout</a>
             </div>
         </nav>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/js.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>

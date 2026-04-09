@@ -88,12 +88,529 @@ INSERT INTO location (location_id, place_name, latitude, longitude, address, map
   (87, 'Matherly Hall', 29.6515, -82.3450, '1405 W University Ave, Gainesville, FL 32611', NULL);
 
 
-INSERT INTO traditions (tradition_id, uq_user_tradition_name, description, category, fbook_pagenum) VALUES
-  ('Listen to the Chimes of Century Tower', 
-   'Stand beneath Century Tower and listen to the carillon bells ring on the hour.',
-   'Campus Landmark', 1, 4),
-  ();
+INSERT INTO traditions (tradition_id, tradition_name, tag_text, description, directions, category, fbook_pagenum, thumbnail_url, requires_photo, requires_answer) VALUES
+  (1, 'Attend Preview',
+   'PREVIEW IS YOUR WELCOME TO THE UNIVERSITY OF FLORIDA.',
+   'This is the moment you become an official UF Gator! every incoming studnet attends Preview, a program jam-packed with workshops, presentations and connections that help you find your way. You''ll also get your first taste of the gator spirit by meeting your Preview Staffer who will help you in your first year and beyond. Preview sets the course for your Gator Student experience!'
+   ,'What new information did you learn at Preview? Who was your favorite Staffer? What is one thing you are excited about after attending Preview?',
+   'GET STARTED, GATORS!', 1, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (2, 'Join the Gator Nation',
+   'JOINING STUDENTS TODAY, ALUMNI TOMORROW CONNECTS YOU WITH YOUR FELLOW GATORS,',
+   'promotes school pride, provides you the opportunity to network with UF alumni, and gives you numerous member perks. Plus, The Gator Nation App is where you complete and record traditions in order to receive a Tradition Keeper pin or medallion for graduation.',
+   'Become a member, members Only Receive free, one of a kind, BEAT tees distributed at UF Emerson Alumni Hall for most home football games. Access Gator Nation Tailgates before every home game at Emerson Alumni Hall. Exclusive access to special events where you can network with Gator Nation alumni',
+   'GET STARTED, GATORS!', 2, 'https://placehold.co/400x300?text=Tradition', 0, 0),
+
+  (3, 'Get Your Class Shirt',
+   'EACH YEAR, INCOMING FIRST YEAR STUDENTS RECEIVE THE UNIVERSITY''S OFFICIAL CLASS SHIRT.',
+   'Wear your shirt with pride, whether it''s on your first few days as a student or to graduation photos and everything in between. There is even a class wall, located in the Reitz Union, installed each spring featuring the shirt design of that year''s graduating class, creating the perfect graduation photo op.',
+   'Write a letter to your senior self to look back on later.',
+   'GET STARTED, GATORS!', 3, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (4, 'Be in the Class Photo',
+   'CEMENT YOUR LEGACY.',
+   'Join your class for the first time and connect with fellow Gators from across the university. Celebrate the start of your journey, show off your class pride and master the iconic Gator Chomp while wearing your exclusive class t-shirt! Event details will be announced at the start of each semester.',
+   'What was the weather like during your class photo? Did you need sunglasses, an umbrella or both? Take a picture of you in the class photo.',
+   'GET STARTED, GATORS!', 4, 'https://placehold.co/400x300?text=Tradition', 1, 1),
+
+  (5, 'Enjoy Good Times and great Events',
+   'KICK OFF EACH SEMESTER AT GREAT GATOR WELCOME EVENTS.',
+   'Student Engagement, along with departments in the Division of Student Life, host events with opportunities for you to meet new people, get connected to the Gator student experience, explore campus and just have fun!',
+   'What Great Gator Welcome events did you attend?',
+   'GET STARTED, GATORS!', 5, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (6, 'Experience Life on Campus',
+   'LIVING ON CAMPUS IS A GREAT WAY TO STAY CONNECTED',
+   'to your Gator student experience. With a variety of living options in the center of campus, you are never far from all the action. Enjoy programs and events throughout the year, as well as opportunities for leadership roles within residence life.',
+   'Who were your roommates? Take a picture of the layout of your room.',
+   'GET STARTED, GATORS!', 6, 'https://placehold.co/400x300?text=Tradition', 1, 1),
+
+  (7, 'Look Up & Around',
+   'MANY OF THE OLDEST BUILDINGS ON CAMPUS HAVE ARCHITECTURAL DETAILS THAT RELATE TO ACADEMICS,',
+   'the state of Florida, campus life or are just gothic-style decoration.',
+   'What are some of your favorite buildings architecturally?',
+   'GET STARTED, GATORS!', 7, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (8, 'Catch Up at The Fries',
+   'THIS MODERN ART STRUCTURE NEXT TO MARSTON SCIENCE LIBRARY IS NAMED "ALACHUA"',
+   'after the county where UF is located. Students use this area as a common meeting spot on campus. You''ll be hard-pressed to find another campus structure as unique as our "fries."',
+   'What are fries without ketchup, a burger or a shake? what do you think they belong with? Then take a photo at the fries.',
+   'CAMPUS TOUR PHOTO OPS', 8, 'https://placehold.co/400x300?text=Tradition', 1, 1),
+
+  (9, 'Strike a Pose with Albert and Alberta',
+   'UF ADOPTED THE ALLIGATOR AS ITS OFFICIAL MASCOT IN 1911.',
+   'In the 1970s, UF welcomed a costumed Albert the Alligator to campus. His female counterpart, Alberta, joined him in 1986. Whether you see them at an athletic event or take a photo by their statue in front of Emerson Alumni Hall, be sure to make a Gator memory in photos with Albert and Alberta. Little known fact: the two are allergic to glitter and confetti.',
+   'Where was your first mascot encounter?',
+   'CAMPUS TOUR PHOTO OPS', 9, 'https://placehold.co/400x300?text=Tradition', 1, 1),
+
+  (10, 'Heisman with the Heismen',
+   'UF HAS A LONG TRADITION OF FOOTBALL EXCELLENCE HIGHLIGHTED BY THREE HEISMAN TROPHY WINNERS:',
+   'Steve Spurrier (''66), Danny Wuerffel (96), and Tim Tebow (''07). The statues, erected in spring of 2011, signify the strong football legacy of our university. Strike the iconic pose and do the Heisman with the Heismen outside the Chira Family Heisman Plaza, or venture inside the Heavener Football Complex to take a photo with the national championship trophies on display.',
+   'Pose Like a Heisman, Choose your pose and take a picture in front of the three Heismen: Cradle a football in your left arm. Stretch out your right arm, palm out. Stare down the tackler to your right. Raise your right knee. Smile.',
+   'CAMPUS TOUR PHOTO OPS', 10, 'https://placehold.co/400x300?text=Tradition', 1, 0),
+
+  (11, 'Chomp with the Bull gator',
+   'THE BULL GATOR STATUE',
+   'in front of Heavener Football Complex was placed in honor of the 2006 Football National Championship and the members of the Bull Gator program, the top donors supporting UF Athletics. Pose or Gator Chomp with the statue during your time as a student. This is a particularly popular photo spot in your graduation regalia.',
+   'Take a photo of you doing the gator chomp at the Bull gator!',
+   'CAMPUS TOUR PHOTO OPS', 11, 'https://placehold.co/400x300?text=Tradition', 1, 0),
+
+  (12, 'Rub Murphree’s Shoe for Luck',
+   'LEGEND SAYS THAT RUBBING THE SHOE OF THE STATUE OF ALBERT A. MURPHREE,',
+   'UF''s second president, will bring luck on your exams. The statue is located in the Campus Historic District across from the Plaza of the Americas, between Library East and Peabody Hall. Take a selfie with the statue or just a photo.',
+   'Did it work? What class did you need the most luck for?',
+   'CAMPUS TOUR PHOTO OPS', 12, 'https://placehold.co/400x300?text=Tradition', 1, 1),
+
+  (13, 'Walk Under the Arch',
+   'PROMINENTLY PLACED IN FRONT OF HEAVENER HALL,',
+   'the archway marks the entrance to campus on 13th Street and West University Avenue. Take a photo under the archway to complete this tradition.',
+   'What is the inscription written in the concrete base? The corners of 13th and University change a lot. Take a photo of what''s there now so when you revisit as an alum, you can remember.',
+   'CAMPUS TOUR PHOTO OPS', 13, 'https://placehold.co/400x300?text=Tradition', 1, 1),
+
+  (14, 'What''s That Called?',
+   'UF HAS AN INTERACTIVE MAP FOR ALL CAMPUS LOCATIONS IN GAINESVILLE.',
+   'it highlights all buildings, parking locations with required decals, green spaces, parks and also construction zones with road and sidewalk closures. It''s available online, as well as the UF mobile app. Known to students as "Fries," this sculpture is actually named for the county in which it resides, "Alachua." Sinkholes were called "chua" by the native Timucuan. Mapmakers eventually began naming the area "Allachua" or "Lachua”. The potato is actually not a sculpture or a moon rock, but a 30-million-year-old piece of chert at Turlington that weighs 10 tons. The Global Gator is a gift from UF alumni Bruce and Laura Gross, it took five months to complete. The statue is 8 feet tall and 6 feet wide, weighs approximately 1,500 pounds, and is entirely bronze. The actual name, "Gator Ubiquity," is inspired by UF''s tagline, "The Gator Nation Is Everywhere."',
+   'What is your favorite colloquial name for a UF statue or building?',
+   'CAMPUS TOUR PHOTO OPS', 14, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (15, 'Get the Reitz Stuff',
+   'THE REITZ UNION IS YOUR GO-TO STUDENT HUB!',
+   'Inside, you''ll uncover a wealth of opportunities for entertainment, discovery, growth, and fun! Whether you''re stopping by to explore Gator Market, printing materials in the computer lab, picking up Gator gear at the UF bookstore, meeting with your student organization, capturing a moment at the UF wall or giving Swamp Boss a rub for good luck, everything is possible here!',
+   'I''s All Here: Art Gallery, Arts and Crafts Center, Auditorium, Barbershop, Career Connections, Center, Dance Studios, Game Room, GATORONE Card, Services, GatorWell: Health, Promotion Services, Graphics & Copy Center, Lounge Areas, Meeting Rooms, Reflection Room, Reitz Union Hotel, SG Bike Repair, SG Print Lab, Student Legal Services Student Organizations, Study Spaces, UF Bookstore, Union Landing. What is your favorite thing at the Reitz?',
+   'THE CAMPUS INSIDER', 15, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (16, 'Eat Like a gator',
+   'WHAT''S FOR DINNER?',
+   'When the growls of hunger strike, Gators have a smorgasbord of delicious options on campus. From quick bites between classes to all-you-care-to-eat dining halls, UF has over 45 dining locations. Whether you''re craving a boba tea, empanada or a full meal, Florida Fresh Dining has you covered, making sure no one studies on an empty stomach!',
+   'What are your favorite dining spots on campus?',
+   'THE CAMPUS INSIDER', 16, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (17, 'Work Hard, Play Hard',
+   'WITH 184,000 SQUARE FEET OF INDOOR SPACE AND 38 ACRES OF OUTDOOR FIELDS, COURTS AND POOLS, RESPORTS IS MORE THAN A GYM, IT''S A COMMUNITY HUB.',
+   'Drawing more than a million visits annually, Southwest Recreation and the Student Recreation and Fitness Centers are home to intramural sports, sports clubs, fitness and wellness services, aquatics and outdoor adventures trips. Other programs and services include weekly group fitness classes, personalized small group training, one-on-one personal training, massage therapy, nutrition services, outdoor excursions and events designed to foster connection and well-being. Come visit and discover how RecSports can help you stay active, connected and thriving throughout your college experience,',
+   'List your main fitness and exercise goals.',
+   'THE CAMPUS INSIDER', 17, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (18, 'Be Well',
+   'UTILIZE STUDENT HEALTH SERVICES TO MAINTAIN YOUR HEALTH AND WELL-BEING.',
+   'These services provide easy access to medical care, immunizations, mental health support and wellness advice, all tailored to you. Regular check-ups and prompt attention to any health issues can help you stay healthy and focused on your studies. Find all the services available on the UF Student Health Care Center website or call 392-392-1161 to make an appointment. UF is committed to your health and well-being and offers many resources, including: Campus Assistance & Resources for Empowerment (CARE) provides supportive guidance to students who experience anticipated transitions and unexpected events. Counseling and Wellness Center (CWC) helps UF students cultivate their mental health and well-being in support of their personal, educational and career development. GatorWell empowers UF students to be healthy and well through prevention, with resources on stress reduction, healthy eating, sleep, time management and much more.',
+   'Feel free to check out and use the health services.',
+   'THE CAMPUS INSIDER', 18, 'https://placehold.co/400x300?text=Tradition', 0, 0),
+
+  (19, 'Find your Secret Study Spot',
+   'THE UF LIBRARIES',
+   'form the largest information resource system in the state. Home to more than 6 million print volumes, 1.5 million e-books and a number of nationally significant collections, there are 12 locations across campus with study areas for individuals and groups. Here are just a few: Architecture & Fine Arts Library, Education Library, Health Science Center Libraries, Library West, Marston Library, Newell Hall, Reitz Union, Smathers Library. Plus, there are six free computer labs across campus.',
+   'Peace & Quiet: What''s your favorite study spots) on campus? Which class kept you there the most?',
+   'THE CAMPUS INSIDER', 19, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (20, 'Connect Toward Your Career',
+   'THE CAREER CONNECTIONS CENTER (C3) IS THE UNIVERSITY OF FLORIDA''S COMPREHENSIVE CAREER SERVICES HUB,',
+   'providing career and professional development for all students, from first year to graduate and professional. Whether you''re exploring career options, building professional skills, gaining meaningful experience or preparing for life after graduation, the C3 is here to help. Located in the Reitz Union, C3 offers career advising, résumé reviews, job search assistance, and networking events to support your professional development at the University and beyond. Don''t miss the semi-annual Career Showcase, where over 300 employers come to campus to hire Gators. While you''re there, be sure to take a photo! Prepare for interviews by visiting the Molm Family Gator Career Closet, where you can select professional attire at no cost.',
+   'What is your dream job after graduation?',
+   'THE CAMPUS INSIDER', 20, 'https://placehold.co/400x300?text=Tradition', 1, 1),
+
+  (21, 'Travel The World',
+   'BE A GLOBAL GATOR.',
+   'UF offers hundreds of programs for study, intern, research or service learning abroad through faculty-led, exchange, and non-UF programs. Thousands of Gators study abroad each year and have profound experiences that impact their personal and professional goals. Studying abroad allows you to take courses in another country, while staying on track with your UF degree and using existing financial aid! Learn more on our website or by visiting the Hub.',
+   'It''s a big world. Where do you want to go? Where have you been?',
+   'THE CAMPUS INSIDER', 21, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (22, 'Find your Campus Oasis',
+   'GREEN SPACES LARGE AND SMALL DOT THE UF CAMPUS.',
+   'Many are ideal for reading, studying or gathering with friends after a hectic day. Others, like the Baughman Center, inspire contemplation and relaxation.',
+   'Where is your campus oasis? Take a photo at one of the mary places such as: Auditorium Park, Baughman Center, Ficke Gardens, Field & Fork Farm and Gardens, Harmonic Woods, Harn Japanese Peace Garden, Natural Area Teaching Laboratory, Norman Lawn, Reitz Ravine Woods, Reitz Union Amphitheater l, Reit: Union North Law, University Arboretum, Wilmot Gardens, Yardley Garden',
+   'GATOR GREEN SPOTS', 22, 'https://placehold.co/400x300?text=Tradition', 1, 1),
+
+  (23, 'Relax at Lake Alice',
+   'THIS IS THE SPOT WHERE ACTUAL GATORS PLAY,',
+   'our own Lake Alice on Museum Road. Nearly 130 acres, this picturesque lake encompasses two small islands where alligators- some as long as eight feet - can be seen sunning themselves. Spotting wildlife here is a UF tradition, but don''t get too close to the lake; hungry gators have been known to climb out of the water and chomp on picnickers'' food and blankets.',
+   'Take a photo of a gator or one of the many wild animals here.',
+   'GATOR GREEN SPOTS', 23, 'https://placehold.co/400x300?text=Tradition', 1, 0),
+
+  (24, 'Watch the Bats Fly',
+   'THE UF BAT HOUSES, LOCATED ON MUSEUM ROAD ACROSS FROM LAKE ALICE,',
+   'are the largest freestanding bat houses in North America. Each night at dusk, observers gather on the sidewalk to witness an estimated 500,000 Brazilian free-tailed, southeastern mouse-eared, and evening bats fly into the Florida sky. Be sure to venture over to the bat houses at sunset on warm nights and witness one of the most unusual sights on campus and in Gainesville. Don''t forget to take a pic while you are there!',
+   'Take a photo of a bat and give it a name!',
+   'GATOR GREEN SPOTS', 24, 'https://placehold.co/400x300?text=Tradition', 1, 1),
+
+  (25, 'Unwind on the Plaza',
+   'LOCATED IN FRONT OF LIBRARY WEST,',
+   'this is one of the busiest outdoor spots on campus. Whether you''re looking for a shady spot for your hammock, a welcoming bench, or a warm spot in the grass, the Plaza of the Americas is the perfect place. Don''t forget to try Krishna Lunch while you are there. Don''t have a hammock? You can rent one from UF RecSports.',
+   'Get a shot relaxing here or having lunch. Who did you meet most for lunch on the Plaza?',
+   'GATOR GREEN SPOTS', 25, 'https://placehold.co/400x300?text=Tradition', 1, 1),
+
+  (26, 'Play Outside',
+   'FROM BACKPACKING THE APPALACHIAN MOUNTAINS',
+   'to paddling through Florida Springs and kayaking along scenic rivers, the Center for Outdoor Recreation & Education (CORE) has something for everyone. CORE offers a wide range of outdoor activities, including equipment rentals, hands-on workshops and exciting adventure trips that will inspire your love for nature and exploration. Whether you''re a seasoned adventurer or just getting started, CORE provides all the tools and guidance to help you experience the great outdoors like never before. ReSports also provides free access for students, to its very own lakefront, just 15 minutes from campus. This serene escape offers two outdoor recreation parks. Relax by the water at North Shore or take your team-building skills to the next level with a challenge course experience at South Shore. From sailing to mountain biking, disc golf and a high ropes course, Lake Wauburg caters to outdoor enthusiasts of all Kinds, making it the perfect destination for adventure and relaxation.',
+   'What''s your favorite outdoor activity?',
+   'GATOR GREEN SPOTS', 26, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (27, 'Listen to the Chimes of Century Tower',
+   'BUILT IN 1953,',
+   'Century Tower was constructed to commemorate the 100th anniversary of the University of Florida and was dedicated to honor UF faculty and students who lost their lives in World Wars I and Il. Listen for the 61-bell carillon, which chimes every quarter hour and gongs on the hour, acting as UF''s official alarm clock. In addition, brief, informal musical concerts entertain students between classes.',
+   'Take a photo of the tower or a selfie with it. What''s your favorite song that you''ve heard Century Tower play?',
+   'CULTURE ON CAMPUS', 27, 'https://placehold.co/400x300?text=Tradition', 1, 1),
+
+  (28, 'Visit the University Auditorium',
+   'THE UNIVERSITY AUDITORIUM WAS COMPLETED IN THE MID 1920s',
+   'and expanded in 1976 with the addition of the Friends of Music room. Listed on the National Register of Historic Places, the auditorium remains an important gathering place where you can attend concerts, lectures, guest lectures and more. It also houses the Anderson Memorial Pipe Organ, which is one of the 10 largest in the Southeast. Check the School of Music and UF Performing Arts calendars and attend an orchestra or symphony concert, choir ensemble or world music performance.',
+   'What event or speaker did you see? Who were you with?',
+   'CULTURE ON CAMPUS', 28, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (29, 'Visit The National Pan -Hellenic Council garden',
+   'THE NATIONAL PAN-HELLENIC COUNCIL GARDEN OPENED JAN. 14, 2021',
+   'and currently stands as a physical tribute to the Divine Nine and their organizational history on the University of Florida''s campus. The area is an outdoor space where students and alumni members of the NPHC can gather, hold events, take pride in their organization and celebrate their heritage. This space also serves as a place to unite and educate students about the history of these diverse chapters. We currently have eight of the nine organizations active on campus. lota Phi Theta Fraternity, Inc. currently inactive. Alpha Phi Alpha Fraternity, Founded 1906, Alpha Kappa Alpha Sorority, Founded 1908, Kappa Alpha Psi Fraternity, Founded 1911, Omega Psi Phi Fraternity, Founded 1917, Delta Sigma Theta Sorority, Founded 1913, Phi Beta Sigma Fraternity, Founded 1914, Zeta Phi Beta Sorority, Founded 1920, Sigma Gamma Rho Sorority, Founded 1922, lota Phi Theta Fraternity, Founded 1963',
+   'Snap a selfie there!',
+   'CULTURE ON CAMPUS', 29, 'https://placehold.co/400x300?text=Tradition', 1, 0),
+
+  (30, 'Explore The Cultural Plaza',
+   'THE UF CULTURAL PLAZA CONSISTS OF',
+   'the Florida Museum of Natural History, the Harn Museum of Art, and the Curtis M. Phillips Center for the Performing Arts. Visit the Butterfly Rainforest at the McGuire Center to see hundreds of butterflies from around the world. The Harn offers free admission to nine galleries. UF''s Performing Arts is in the Top 10 among the country''s public universities, and each season established and emerging national and international stars perform.',
+   'What would the Harn be without its collection? Take a photo of your favorite work of art.',
+   'CULTURE ON CAMPUS', 30, 'https://placehold.co/400x300?text=Tradition', 1, 1),
+
+  (31, 'Take in Turlington Plaza',
+   'TAKE A BREAK BETWEEN CLASSES AND HEAD OVER TO TURLINGTON PLAZA,',
+   'one of the liveliest spots on campus. No two days are the same. You can catch everything from a spontaneous dance performance or political event to a friendly four-square matchup. And if you see a long line, jump in because it''s likely there is free food or some other giveaway waiting for you at the front. There are so many opportunities to get involved!',
+   'List three Turlington memories or moments:',
+   'GET INVOLVED, GATORS!', 31, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (32, 'Attend UF Family Weekend',
+   'A WEEKEND EVENT UNLIKE ANY OTHER,',
+   'Family Weekend is an opportunity for proud Gator families to join you in Gainesville for a weekend of activities and Gator sports events. Depending on the time of year, activities include various workshops, family competitions and tailgate, and a UF Legacy Pinning Ceremony (only in the fall). You and your family can celebrate The Gator Nation together. Bring your biggest supporters and loved ones to this event to show them what UF is all about!',
+   'What family memories were made during the weekend?',
+   'GET INVOLVED, GATORS!', 32, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (33, 'Vote in a Student Government Election',
+   'UF STUDENT GOVERNMENT HOLDS ELECTIONS',
+   'for the executive and legislative branches every fall and spring semester. These elected officials represent the student body on issues such as transportation, service fees, athletics and student services. Make your voice heard and vote in each election!',
+   'Take a pic of your "I Voted" sticker. What would UF be like with you running it? Write a catchy campaign slogan!',
+   'GET INVOLVED, GATORS!', 33, 'https://placehold.co/400x300?text=Tradition', 1, 1),
+
+  (34, 'Read the Independent Florida Alligator',
+   'THE INDEPENDENT FLORIDA ALLIGATOR IS ONE OF THE LARGEST STUDENT-RUN NEWSPAPERS IN THE COUNTRY',
+   'with digital and Monday print circulation. Students have relied on The Alligator and its precursors as a trusted news source since 1906. It has been financially and politically independent from the university since 1973. You can locate The Alligator in racks across campus or online.',
+   'What story from your time at UF made big news?',
+   'GET INVOLVED, GATORS!', 34, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (35, 'Join a Student Organization',
+   'THERE ARE MORE THAN 1,000 STUDENT ORGANIZATIONS AT THE UNIVERSITY OF FLORIDA.',
+   'based groups, the Department of Student Engagement is here to help you navigate your student experience! Need help to begin? Ask about a personalized Individual Involvement Consultation from an engagement advisor to learn more or start by following @ufstudentengage. STUDENTENGAGEMENT@UFSA.UFL.EDU | 352.392.1672',
+   'List the student organizations you have or will join.',
+   'GET INVOLVED, GATORS!', 35, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (36, 'Get Involved with Your College',
+   'THE UNIVERSITY OF FLORIDA BOASTS 16 COLLEGES',
+   'that offer an array of programs ranging from finance and creative photography to animal sciences and architecture. Whatever major you choose, your college offers many opportunities to get involved and gain experience for your future career. Most colleges offer networking groups, academic and leadership honorees and ambassadors. Meet up with your academic advisor or a professor to discuss your interests and find out more! Take a pic at one of your college events.',
+   'What was the experience like or did you learn something new?',
+   'GET INVOLVED, GATORS!', 36, 'https://placehold.co/400x300?text=Tradition', 1, 1),
+
+  (37, 'Mr. Two Bits',
+   'GEORGE E. EDMONDSON JR.',
+   '(1922-2019) was a WWIl pilot and Insurance salesman from Tampa. Edmondson was a longtime fan of - and unofficial cheerleader for - the Florida Gators football team despite never attending UF. This is the cheer he lead in 1949, which soon began a UF tradition. At every home football game, an honorary Mr. Two Bits leads the cheer on the field during pre-game. Celebrity Mr. Two Bits include Steve Spurrier, Albert, Olympic medalists, teachers, veterans and former Gator athletes.',
+   'Do the MR. TWO BITS CHEER Said before the start of each home football game: Two Bits, Four Bits, Six Bits, a Dollar; All for the Gators, stand up and holler! (Make three large arm circles with your right arm ending by reaching your arm straight up in the air to end.)',
+   'GET INVOLVED, GATORS!', 37, 'https://placehold.co/400x300?text=Tradition', 0, 0),
+
+  (38, 'Get Your Gator Nation BEAT tee',
+   'YOU WON''T FIND THESE IN ANY BOOKSTORE.',
+   'If you are a STAT member, line up around Emerson Alumni Hall where 1,000 BEAT tees are given out on designated days before our biggest football games each season. Collect them all to mark your years at UF. We will send an email on pick-up details. Get in line early - these shirts go fast!',
+   'Take a pic of you wearing your BEAT tee.',
+   'GAMEDAYS + HOMECOMING', 38, 'https://placehold.co/400x300?text=Tradition', 1, 0),
+
+  (39, 'Tailgate with Fellow Gators',
+   'THE ULTIMATE GATOR GAMEDAY EXPERIENCE,',
+   'tailgating is more than just a pre-game ritual in Gainesville, it''s a way of life for Gator fans! As the sun rises on game day, the campus comes alive with the energy of thousands of devoted Gator fans. Before heading into the Swamp, be sure to stop by Gator Nation Tailgates at Emerson Alumni Hall each Saturday before kickoff, where alumni and student UFAA members enjoy free admission to indulge in tasty fare for purchase, live entertainment, and tailgate games. You might even spot Albert and Alberta making a special appearance!',
+   'Who did you go to your first Gator football tailgate with?',
+   'GAMEDAYS + HOMECOMING', 39, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (40, 'Won''t Back Down',
+   'AT THE END OF THE THIRD QUARTER OF EVERY FOOTBALL GAME,',
+   'fans sing rock legend Tom Petty''s song "I Won''t Back Down." The song is also played at home Basketball games. Petty was born and raised in Gainesville and UF granted him a posthumous honorary Doctor of Music degree in 2023.',
+   'Sing "I Won''t Back Down" at a game and take a photo of the moment.',
+   'GAMEDAYS + HOMECOMING', 40, 'https://placehold.co/400x300?text=Tradition', 1, 0),
+
+  (41, 'Cheer on Gator Sports',
+   'AT THE UNIVERSITY OF FLORIDA,',
+   'every semester is filled with exciting moments for sports fans. Whether you''re rallying with the crowd at a track meet, supporting the lacrosse team, catching a fly ball at Pressly Stadium or Condon Family Ballpark, or heading to the Ben Hill Griffin Stadium to watch our football team in action, there''s no shortage of Gator pride to celebrate.',
+   'try to see all Fall & Spring Sports: Fall: Basketball Cross Country Football Soccer Swimming& Diving Tennis Track & Field Volleyball Spring: Baseball Basketball Golf Gymnastics Lacrosse Softball Swimming & Diving Tennis Track & Field',
+   'GAMEDAYS + HOMECOMING', 41, 'https://placehold.co/400x300?text=Tradition', 0, 0),
+
+  (42, 'Get Rowdy in the O''Dome',
+   'NO MATTER WHAT TIME OF YEAR YOU VISIT,',
+   'something exciting is always happening in the Exactech Arena at the Stephen C. O''Connell Center! The O''Dome is home to Gator basketball, volleyball, gymnastics, and swimming and diving. In the mood for something other than sports? Enjoy a live concert, listen to a nationally recognized speaker or pick up something special at the annual craft fair.',
+   'What were some of your favorite experiences at the O''Dome?',
+   'GAMEDAYS + HOMECOMING', 42, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (43, 'Celebrate Homecoming Weekend',
+   'GET READY TO BE ENTERTAINED DURING HOMECOMING WEEKEND!',
+   'Homecoming has been a treasured UF tradition Since 1916. It is a time when UF''s students and alumni unite to celebrate sports teams and show off our Gator pride. Always coinciding with a home football game, classes are canceled the Friday of Homecoming week. Today''s traditions include a parade, where Gator fans line the streets.',
+   'Attend these Events: Gator Growl Gator Gallop Homecoming Festival Homecoming Game Homecoming Pageant Homecoming Parade Soulfest',
+   'GAMEDAYS + HOMECOMING', 43, 'https://placehold.co/400x300?text=Tradition', 0, 0),
+
+  (44, 'growl with the gators',
+   'FOR MORE THAN 90 YEARS, GATOR GROWL HAS HEADLINED UF''S HOMECOMING CELEBRATION.',
+   'Part pep rally, part festival, but entirely Gator, Gator Growl features special appearances by the football team and cheerleaders as well as live entertainment from artists such as FloRida, Lynyrd Skynyrd, Snoop Dogg, Dustin Lynch (pictured), Walk the Moon, Gunna, Chase Rice, and many more.Gator Growl remains a powerful fixture at UF during Homecoming. You don''t want to miss it!',
+   'Who was the headliner at your first Gator Growl?',
+   'GAMEDAYS + HOMECOMING', 44, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (45, 'go Beyond Campus',
+   'THE GAINESVILLE AREA WILL ENTICE YOU TO GO BEYOND CAMPUS AND EXPLORE THE TOWN.',
+   'Downtown is a quaint gathering of shops, restaurants, theaters, and parks offering locally grown vegetables and fresh-baked pastries, original plays at the Hippodrome State Theatre and plenty of clubs to dance the night away. Midtown is located north of campus along University Avenue and is a hub of after-hours fun, with local restaurants and more clubs.',
+   'After exploring Gainesville and Alachua County, what was your most memorable moment?',
+   'EXPLORE GAINESVILLE', 45, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (46, 'Picnic in the Parks',
+   'GAINESVILLE AND ALACHUA COUNTY ARE HOME TO AN ABUNDANCE OF BEAUTIFUL PARKS, PRESERVES,',
+   'recreation spaces, natural areas and community centers such as area favorite Paynes Prairie, one of the most biologically unique ecosystems in the southern United States. It has long served as a place to hike and enjoy the outdoors among diverse Florida wildlife, such as alligators, more than 270 species of wild birds, and wild horses that live within its 21,000-acre grounds.',
+   'Try to Explore These Beautiful Places: Cade Museum for Creativity & Invention Devil''s Millhopper Geological State Park Carson Springs Wildlife Sanctuary Haile Homestead Ichetucknee Springs State Park Depot Park Kanapaha Botanical Gardens Kika Silva Pla Planetarium Morningside Nature Center of Florida',
+   'EXPLORE GAINESVILLE', 46, 'https://placehold.co/400x300?text=Tradition', 0, 0),
+
+  (47, 'Paint the 34th St. Wall',
+   'LAYER UPON LAYER OF PAINT COATS THE 34TH STREET WALL,',
+   'which is home to messages and artwork painted by students and Gainesville residents. The wall is located on SW 34th Street between University Avenue and Archer Road. Forty-five panels long, some sections of the wall are covered in more than 250 layers of paint. From birthday wishes and political comments to invitations and memorials, the 34th Street Wall has served as The Gator Nation''s unofficial announcement board since the 1970s.',
+   'Visit the wall, paint the wall and take a pic!',
+   'EXPLORE GAINESVILLE', 47, 'https://placehold.co/400x300?text=Tradition', 1, 0),
+
+  (48, 'Do Some Gator Good',
+   'FROM MENTORING LOCAL HIGH SCHOOL STUDENTS TO DONATING FOOD,',
+   'there are many ways to get involved in projects around campus and Gainesville. The Brown Center for Leadership and Service organizes community service opportunities for students year-round. You can also volunteer and donate at the Alan and Cathy Hitchcock Field & Fork Pantry, UF''s campus-run food pantry which offers staples such as bread, non-perishable canned goods. frozen meats and seasonal produce to help students.',
+   'What was your most rewarding community service experience? Why?',
+   'GATORS GIVEBACK', 48, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (49, 'Dance, Dance, Dance!',
+   'SINCE ITS START IN 1995, DANCE MARATHON AT UF HAS BECOME THE LARGEST AND HIGHEST-FUNDRAISING STUDENT-RUN PHILANTHROPIC EFFORT IN THE SOUTHEASTERN UNITED STATES.',
+   'Yearlong, members raise funds and awareness for their local Children''s Miracle Network Hospital, UF Health Shands Children''s Hospital. Each spring, Dance Marathon at UF hosts a 26.2-hour event bringing fundraisers and donors together to celebrate and recognize the impact they are making to Change Kids'' Health and Change the Future, One hundred percent of the funds raised go directly to UF Health Shands to support the hospital''s areas of greatest need, including pediatric research, life-saving equipment, patient programs and services. DM at UF is one of the five founding Dance Marathon programs in the nation. Raised over $33 million for UF Health Shands Children''s Hospital Since 1995. UF Health Children''s Hospital treats patients from all 67 counties in Florida, all 46 states and nine countries.',
+   'Participate in Dance Marathon',
+   'GATORS GIVEBACK', 49, 'https://placehold.co/400x300?text=Tradition', 0, 0),
+
+  (50, 'Stand Up & Holler!',
+   'GATOR NATION GIVING DAY IS AN ALL-DAY FUNDRAISING EVENT,',
+   'calling on UF alumni, students and friends to come together to support UF and all of its areas of positive impact in our state, nation and world. During UF''s seventh annual Giving Day in February 2025, the pride and passion of The Gator Nation were on full display. In a 24-hour show of UF unity, nearly 13,000 Gators of all kinds (alumni, students, faculty, staff, friends and family) made gifts to support student programs, scholarships, research, infrastructure improvements and more.',
+   'What do you Stand up and Holler for?',
+   'GATORS GIVEBACK', 50, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (51, 'Be a grateful Gator!',
+   'EACH GRATEFUL GATOR DAY,',
+   'UF students, faculty and staff pause to celebrate the philanthropic generosity of those who donate to our beloved university. Gifts from alumni, parents and friends support everything from scholarships to student-focused programs to groundbreaking research and more - all areas of excellence that set UF apart. Event activities highlight the importance and impact of private support and provide students the opportunity to personally thank UF donors. Attend or get involved and take a picture. The Impact of Philanthropy Gifts from The Gator Nation ensure students have access to spaces that foster collaboration, facilitate research and prepare future leaders. Private donations fund programs that help Gators thrive, like the Alan and Cathy Hitchcock Field & Fork Pantry, which distributes more than 263,000 pounds of food each year. Alumni, parents and friends play an important role in supporting students'' career development through initiatives like the Molm Family Gator Career Closet, which has provided over 2,000 students with professional attire.',
+   'Attend or get involved and take a picture.',
+   'GATORS GIVEBACK', 51, 'https://placehold.co/400x300?text=Tradition', 1, 0),
+
+  (52, 'Show Off Your Gator Wrap Ring',
+   'THE GATOR WRAP RING HAS BEEN A TRADITION',
+   'among UF students and alumni since the late 1930s, and Florida remains one of the only universities in the country to have a custom class ring. Gators can celebrate their transition into their senior year by attending the annual Class Councils Ring Dance at the end of their junior year. Show off your class ring at the Ring Dance.',
+   'What are you most excited for as you begin your senior year?',
+   'FROM STUDENTS TO ALUMNI', 52, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (53, 'Attend Senior Sendoff!',
+   'CELEBRATE WITH YOUR CLASS ONE LAST TIME BEFORE COMMENCEMENT!',
+   'This annual end of year celebration congratulates the seniors and celebrates their accomplishments before they join The Gator Nation as an alum!',
+   'Which friends, professors, and classes made the biggest impact on your UF experience?',
+   'FROM STUDENTS TO ALUMNI', 53, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (54, 'Say Cheers!',
+   'JOIN YOUR FELLOW GRADUATING SENIORS AT EMERSON ALUMNI HALL FOR TOAST TO THE CLASS',
+   'a special celebration marking your transition from student to proud Gator Alumni! Raise a glass to your accomplishments, say "Cheers and Go Gators!", and commemorate this major milestone in your journey. At this annual event, you''ll connect with Gator Alums and your fellow grads, learn about exclusive UFAA member perks, be recognized for your contributions as a student donor, and celebrate your final event as a student in Gator style.',
+   'What is something you are excited to participate in as a Gator Alumni?',
+   'FROM STUDENTS TO ALUMNI', 54, 'https://placehold.co/400x300?text=Tradition', 0, 1),
+
+  (55, 'Celebrate Your Graduation!',
+   'GRADUATION CEREMONIES ARE HELD EACH FALL, SPRING, AND SUMMER.',
+   'Participants are dressed in academic regalia, including a gown and a cap with tassel colors specific to each college. Tradition Keepers are recognized by the gold medallion they sport over their commencement regalia. Get ready to feel a surge of pride when your name is called to walk across the stage - you''ve earned the spotlight!',
+   'Take a photo in your regalia with friends and/or family.',
+   'FROM STUDENTS TO ALUMNI', 55, 'https://placehold.co/400x300?text=Tradition', 1, 0),
+
+  (56, 'Join the Alumni Association',
+   'GRADUATION ISN''T A DESTINATION - IT''S THE NEXT STEP IN YOUR JOURNEY AS A GATOR!',
+   'Wherever you''re headed next, we know you''ll bring The Gator Nation with you. The best way to stay in touch with the global UF network is to connect with Gator Clubs® and Affiliate Groups as an official member of the UF Alumni Association.',
+   'Which club or affiliate group is in your future?',
+   'FROM STUDENTS TO ALUMNI', 56, 'https://placehold.co/400x300?text=Tradition', 0, 1);
 
 INSERT INTO tradition_locations(tradition_id, location_id) VALUES
-  (),
-  ();
+  (1, 1),
+
+  (2, 5),
+
+  (3, 1),
+
+  (4, 27),
+
+  (5, 12),
+  (5, 38),
+  (5, 43),
+
+  (6, 3),
+
+  (7, 6),
+  (7, 26),
+  (7, 83),
+  (7, 84),
+  (7, 86),
+  (7, 87),
+
+  (8, 12),
+
+  (9, 5),
+
+  (10, 81),
+  (10, 82),
+
+  (11, 80),
+  (11, 82),
+
+  (12, 6),
+  (12, 26),
+  (12, 43),
+
+  (13, 7),
+
+  (14, 11),
+  (14, 12),
+  (14, 13),
+
+  (15, 1),
+
+  (16, 1),
+  (16, 14),
+  (16, 15),
+  (16, 17),
+
+  (17, 8),
+  (17, 9),
+  (17, 44),
+  (17, 45),
+  (17, 46),
+
+  (18, 10),
+
+  (19, 1),
+  (19, 21),
+  (19, 22),
+  (19, 23),
+  (19, 24),
+  (19, 25),
+  (19, 26),
+
+  (20, 1),
+
+  (21, 16),
+
+  (22, 28),
+  (22, 29),
+  (22, 30),
+  (22, 31),
+  (22, 32),
+  (22, 33),
+  (22, 34),
+  (22, 35),
+  (22, 36),
+  (22, 37),
+  (22, 38),
+  (22, 39),
+  (22, 40),
+  (22, 41),
+
+  (23, 19),
+
+  (24, 19),
+  (24, 42),
+
+  (25, 24),
+  (25, 43),
+
+  (26, 44),
+  (26, 45),
+  (26, 46),
+
+  (27, 18),
+
+  (28, 47),
+
+  (29, 48),
+
+  (30, 49),
+  (30, 50),
+  (30, 51),
+  (30, 52),
+
+  (31, 53),
+
+  (32, 1),
+  (32, 5),
+  (32, 27),
+
+  (33, 1),
+
+  (34, 53),
+
+  (35, 1),
+
+  (36, 54),
+  (36, 55),
+  (36, 56),
+  (36, 57),
+  (36, 58),
+  (36, 59),
+  (36, 60),
+  (36, 61),
+  (36, 62),
+  (36, 63),
+  (36, 64),
+  (36, 65),
+  (36, 66),
+  (36, 67),
+  (36, 68),
+  (36, 69),
+
+  (37, 2),
+
+  (38, 5),
+
+  (39, 2),
+  (39, 5),
+
+  (40, 2),
+  (40, 27),
+
+  (41, 2),
+  (41, 27),
+  (41, 70),
+  (41, 71),
+
+  (42, 27),
+
+  (43, 2),
+  (43, 7),
+  (43, 27),
+  (43, 43),
+
+  (44, 27),
+
+  (45, 73),
+  (45, 74),
+  (45, 75),
+
+  (46, 76),
+
+  (47, 77),
+
+  (48, 78),
+  (48, 79),
+
+  (49, 27),
+
+  (50, 43),
+
+  (51, 43),
+
+  (52, 5),
+
+  (53, 2),
+  (53, 43),
+  (53, 53),
+
+  (54, 5),
+
+  (55, 2),
+  (55, 27),
+
+  (56, 5);
