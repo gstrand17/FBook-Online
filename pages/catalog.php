@@ -1,35 +1,49 @@
 <?php
-  $title = "Fbook Catalog";
-  $traditions = [
-    [
-        "tradition_id" => 1,
-        "tradition_name" => "Join the Gator Nation",
-        "tagline" => "Become part of UF history",
-        "image" => "../assets/gator1.jpg",
-        "completed" => true
-    ],
-    [
-        "tradition_id" => 2,
-        "tradition_name" => "Get Your Class Shirt",
-        "tagline" => "Show your class pride",
-        "image" => "../assets/gator2.jpg",
-        "completed" => false
-    ],
-    [
-        "tradition_id" => 3,
-        "tradition_name" => "Attend a Campus Tour",
-        "tagline" => "Explore UF landmarks",
-        "image" => "../assets/gator3.jpg",
-        "completed" => false
-    ],
-    [
-        "tradition_id" => 4,
-        "tradition_name" => "Take a Photo at Century Tower",
-        "tagline" => "Capture a UF moment",
-        "image" => "../assets/gator4.jpg",
-        "completed" => true
-    ]];
+    session_start();
+
+    $conn = new mysqli("localhost", "root", "", "fbook_online");
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $user_id = $_SESSION['user_id'] ?? 0;
+
+    $sql = "
+        SELECT 
+            t.tradition_id,
+            t.tradition_name,
+            t.tag_text AS tagline,
+            MAX(p.file_path) AS file_path,
+            CASE 
+                WHEN c.comp_id IS NOT NULL THEN 1
+                ELSE 0
+            END AS completed
+
+        FROM traditions t
+
+        LEFT JOIN completion c 
+            ON c.tradition_id = t.tradition_id 
+            AND c.user_id = ?
+
+        LEFT JOIN photos p 
+            ON p.completion_id = c.comp_id
+
+        GROUP BY t.tradition_id
+
+        ORDER BY t.fbook_pagenum
+        ";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    while ($row = $result->fetch_assoc()) {
+        $traditions[] = $row;
+    }
 ?>
+
 
 
 <html>
@@ -107,62 +121,52 @@
 
                 <div class="container mt-4 mb-5">
 
-                    <div class="row g-4">
+            <div class="row g-4">
 
-                        <?php foreach($traditions as $tradition): ?>
+                <?php foreach ($traditions as $tradition): ?>
 
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="col-md-4 col-lg-3">
+                    
+                    <a href="tradition_template.php?tradition_id=<?php echo $tradition['tradition_id']; ?>" 
+                    class="text-decoration-none">
 
-                                <a href="tradition.php?tradition_id=<?php echo $tradition['tradition_id']; ?>" style="text-decoration: none; color: inherit;">
+                        <div class="card tradition-card position-relative">
 
-                                    <div class="card tradition-card">
+                            <img 
+                                src="<?php echo $tradition['file_path'] ?? 'images/default.jpg'; ?>" 
+                                class="tradition-img"
+                            >
 
-                                    <div class="position-relative">
-
-                                            <img 
-                                                src="<?php echo $tradition['image']; ?>" 
-                                                class="tradition-img"
-                                                alt="Tradition Image"
-                                            >
-
-                                            <div class="checkbox-overlay">
-
-                                                <input 
-                                                    type="checkbox"
-                                                    disabled
-                                                    <?php echo $tradition['completed'] ? "checked" : ""; ?>
-                                                >
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="card-body">
-
-                                            <h5 class="card-title">
-                                                <?php echo $tradition['tradition_name']; ?>
-                                            </h5>
-
-                                            <div class="tagline">
-                                                <?php echo $tradition['tagline']; ?>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </a>
-
+                            <div class="checkbox-overlay">
+                                <input 
+                                    type="checkbox"
+                                    <?php echo $tradition['completed'] ? 'checked' : ''; ?>
+                                    disabled
+                                >
                             </div>
 
-                        <?php endforeach; ?>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <?php echo $tradition['tradition_name']; ?>
+                                </h5>
 
-                    </div>
+                                <p class="tagline">
+                                    <?php echo $tradition['tagline']; ?>
+                                </p>
+                            </div>
+
+                        </div>
+                    </a>
+
+                </div>
+
+                <?php endforeach; ?>
 
                 </div>
 
             </div>
 
+        </div>
 
             <footer class="dashboard-footer">
                 <div class="footer-left">
