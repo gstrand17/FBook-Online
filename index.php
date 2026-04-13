@@ -91,8 +91,8 @@
             </button>
 
             <div class="activity-card">
-                <img src="assets/chimes.png" alt="Experience Life on Campus" onclick="window.location.href='/pages/residence_activity.php'">
-                <p>Experience<br>Life on Campus</p>
+                <img src="assets/chimes.png" alt="Listen to the Chimes of Century Tower">
+                <p>Listen to the Chimes<br>of Century Tower</p>
             </div>
 
             <div class="activity-card">
