@@ -1,4 +1,5 @@
 <?php
+  session_start();
   $title = "F-Book – University of Florida";
 ?>
 <!DOCTYPE html>
