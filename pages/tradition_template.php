@@ -82,6 +82,7 @@
 				<p><span class="highlight-word"><b><?php echo $tradition['tag_text']; ?></b> </span><?php echo $tradition['description']; ?></p>
 				<p style="padding-top: 50px"><?php echo $tradition['directions']; ?></p>
 				<form action="add_fbook.php" method="POST" enctype="multipart/form-data" class="mt-4 p-4 border rounded shadow-sm bg-light">
+				<input type="hidden" name="tradition_id" value="<?php echo $tradition_id; ?>">
 				
 
                 <?php
