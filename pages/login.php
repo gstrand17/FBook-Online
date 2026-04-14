@@ -61,19 +61,19 @@
         
         <form action="register.php" method="POST">
             <div class="mb-3">
-            <input type="text" class="form-control" name="name" id="nameInput" placeholder="Full Name" required>
+            <input type="text" class="form-control" name="name" id="nameInput" placeholder="Full Name (Registration Only)">
             </div>
             <div class="mb-3">
             <input type="text" class="form-control" name="username" id="usernameInput" placeholder="Username" required>
             </div>
             <div class="mb-3">
-            <input type="email" class="form-control" name="email" id="emailInput" placeholder="Email" required>
+            <input type="email" class="form-control" name="email" id="emailInput" placeholder="Email (Registration Only)">
             </div>
             <div class="mb-3">
             <input type="password" class="form-control" name="password" id="passwordInput" placeholder="Password" required>
             </div>
             <div class="mb-3">
-            <input type="number" class="form-control" name="graduation_year" id="yearInput" placeholder="Graduation Year" required>
+            <input type="number" class="form-control" name="graduation_year" id="yearInput" placeholder="Graduation Year (Registration Only)">
             </div>
 
             <div class="form-check text-center d-flex align-items-center justify-content-center">
@@ -87,8 +87,9 @@
             Forgot Password?
             </p>
 
-            <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary rounded-0 px-5" style="background-color: #1c233f; font-family: 'Times New Roman', Times, serif;">Join Now</button>
+            <div class="d-flex justify-content-center gap-3">
+                <button type="submit" name="action" value="login" class="btn btn-outline-light rounded-0 px-5" style="font-family: 'Times New Roman', Times, serif;">Login</button>
+                <button type="submit" name="action" value="register" class="btn btn-primary rounded-0 px-5" style="background-color: #1c233f; font-family: 'Times New Roman', Times, serif;">Join Now</button>
             </div>
         </form>
         </main>
