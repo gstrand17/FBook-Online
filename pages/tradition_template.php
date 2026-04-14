@@ -1,4 +1,5 @@
 <?php
+  session_start();
   $title = "Residence Page";
   
   $tradition_id = $_GET['tradition_id'] ?? 1;
@@ -80,7 +81,7 @@
 			<div class="col-md-6 text-column">
 				<p><span class="highlight-word"><b><?php echo $tradition['tag_text']; ?></b> </span><?php echo $tradition['description']; ?></p>
 				<p style="padding-top: 50px"><?php echo $tradition['directions']; ?></p>
-				<form action="your_php_handler.php" method="POST" enctype="multipart/form-data" class="mt-4 p-4 border rounded shadow-sm bg-light">
+				<form action="add_fbook.php" method="POST" enctype="multipart/form-data" class="mt-4 p-4 border rounded shadow-sm bg-light">
 				
 
                 <?php
@@ -100,7 +101,7 @@
                 ?>
 
                 <?php
-                if ($tradition['requires_answer'] || $tradition['requires_photo'] ) {
+                if (true) {
                     echo '<button type="submit" class="btn w-100 fw-bold text-white" style="background-color: #fe7d1a;">
 					Add to My F-Book
 				</button>';
