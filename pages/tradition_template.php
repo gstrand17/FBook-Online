@@ -37,8 +37,10 @@
       $avgLong += (float)$loc['longitude'];
   }
 
-  $avgLat /= $count;
-  $avgLong /= $count;
+  if ($count > 0) {
+      $avgLat /= $count;
+      $avgLong /= $count;
+  }
 ?>
 <html>
 	<head>
@@ -145,11 +147,9 @@
 			<div class="col-md-6 image-column" style="padding-left: 150px">
                 <div style="align-items: center; justify-content: center; flex-direction: column;">
                     <img src="<?php echo htmlspecialchars($tradition['thumbnail_url']); ?>" style="padding-bottom: 10px; padding-left: 30px" alt="Tradition image" ...>
-                    
-                    <img src="../assets/residence_hall_placeholder_img.png" class="border border-secondary border-5" alt="UF Logo" style="height: 20%">
                 </div>
 
-                <gmp-map center="<?php echo $avgLat; ?>,<?php echo $avgLong; ?>,<?php echo $locations[0]['longitude']; ?>" zoom="13"
+                <gmp-map center="<?php echo $avgLat; ?>,<?php echo $avgLong; ?>" map-id="DEMO_MAP_ID" zoom="17"
                          style="width:100%;height:280px;border-radius:8px;margin-top:12px;">
                     <?php foreach ($locations as $location): ?>
                         <gmp-advanced-marker
