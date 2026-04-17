@@ -23,7 +23,7 @@ if ($action == "login") {
         $_SESSION['username'] = $username;
         $_SESSION['name'] = $user['name'];
 
-        header("Location: dashboards.php");
+        header("Location: ../index.php");
         exit();
     } else {
         echo "Invalid username or password. Please try again.";
@@ -44,7 +44,7 @@ if ($action == "login") {
         $_SESSION['username'] = $username;
         $_SESSION['name'] = $name;
 
-        header("Location: dashboards.php");
+        header("Location: ../index.php");
         exit();
     } else {
         echo "Error: " . $stmt->error;
