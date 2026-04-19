@@ -96,9 +96,6 @@ CREATE TABLE photos (
 );
 
 
-CREATE INDEX idx_completion_user     ON completion(user_id);
-
-
 CREATE INDEX idx_completion_user      ON completion(user_id);
 CREATE INDEX idx_completion_tradition ON completion(tradition_id);
 CREATE INDEX idx_photo_completion     ON photos(completion_id);

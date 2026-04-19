@@ -1,4 +1,4 @@
-INSERT INTO location (location_id, place_name, latitude, longitude, address, map_api_id) VALUES
+INSERT INTO location (location_id, place_name, latitude, longitude, address) VALUES
   (1, 'Reitz Union', 29.6465, -82.3477, '655 Reitz Union Drive, Gainesville, FL 32611'),
   (2, 'Ben Hill Griffin Stadium', 29.6499, -82.3486, 'Stadium Rd, Gainesville, FL 32611'),
   (3, 'UF Housing and Residence Life', 29.6385, -82.3411 , '1304 Diamond Rd, Gainesville, FL 32611'),
@@ -496,7 +496,6 @@ INSERT INTO tradition_locations(tradition_id, location_id) VALUES
   (22, 28),
   (22, 29),
   (22, 30),
-  (22, 31),
   (22, 32),
   (22, 33),
   (22, 34),
