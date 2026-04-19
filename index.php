@@ -1,5 +1,10 @@
 <?php
   session_start();
+  if (isset($_SESSION['user_id'])) {
+    header("Location: pages/countdown.php");
+    exit;
+  }
+  
   $title = "F-Book – University of Florida";
 
   $db = new mysqli("localhost", "root", "", "fbook_online");

@@ -101,13 +101,11 @@
                 </ul>
             </div>
 
-            <a class="btn sign-in-btn ms-3" href="login.php">Sign-In</a>
+            <a class="btn sign-in-btn ms-3" href="logout.php">Sign-Out</a>
         </div>
     </nav>
 
     <main class="main-content">
-
-        <!-- Countdown to Graduation -->
         <section class="countdown-section">
             <h2 class="countdown-title">Countdown to Graduation</h2>
 
