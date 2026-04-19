@@ -149,13 +149,12 @@
                     <img src="<?php echo htmlspecialchars($tradition['thumbnail_url']); ?>" style="padding-bottom: 10px; padding-left: 30px" alt="Tradition image" ...>
                 </div>
 
-                <gmp-map center="<?php echo $avgLat; ?>,<?php echo $avgLong; ?>" map-id="DEMO_MAP_ID" zoom="17"
+                <gmp-map center="<?php echo $avgLat . ',' . $avgLong; ?>"
+                         map-id="DEMO_MAP_ID"
+                         zoom="17"
                          style="width:100%;height:280px;border-radius:8px;margin-top:12px;">
                     <?php foreach ($locations as $location): ?>
-                        <gmp-advanced-marker
-                                position="<?php echo $location['latitude']; ?>,<?php echo $location['longitude']; ?>"
-                                title="<?php echo htmlspecialchars($location['place_name']); ?>">
-                        </gmp-advanced-marker>
+                        <gmp-advanced-marker position="<?php echo (float)$location['latitude'] . ',' . (float)$location['longitude']; ?>" title="<?php echo htmlspecialchars($location['place_name']); ?>"></gmp-advanced-marker>
                     <?php endforeach; ?>
                 </gmp-map>
 			</div>
