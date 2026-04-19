@@ -40,12 +40,11 @@
     $stmt->execute();
     $result = $stmt->get_result();
 
+    $traditions = [];
     while ($row = $result->fetch_assoc()) {
         $traditions[] = $row;
     }
 ?>
-
-
 
 <html>
 	<head>
