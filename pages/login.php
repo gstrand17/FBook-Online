@@ -58,27 +58,40 @@
         <main class="main-content">
 
         <h1 class="text-center mt-5 text-white" style="-webkit-text-stroke: 1px gray; font-size: 50px; padding-bottom: 40px;">Get Ready To Start Your F-Book Journey</h1>
-        <div class="mb-3">
-        <input type="email" class="form-control" id="emailInput" placeholder="Email or Phone Number">
-        </div>
-        <div class="mb-3">
-        <input type="password" class="form-control" id="passwordInput" placeholder="Password">
-        </div>
+        
+        <form action="register.php" method="POST">
+            <div class="mb-3">
+            <input type="text" class="form-control" name="name" id="nameInput" placeholder="Full Name (Registration Only)">
+            </div>
+            <div class="mb-3">
+            <input type="text" class="form-control" name="username" id="usernameInput" placeholder="Username" required>
+            </div>
+            <div class="mb-3">
+            <input type="email" class="form-control" name="email" id="emailInput" placeholder="Email (Registration Only)">
+            </div>
+            <div class="mb-3">
+            <input type="password" class="form-control" name="password" id="passwordInput" placeholder="Password" required>
+            </div>
+            <div class="mb-3">
+            <input type="number" class="form-control" name="graduation_year" id="yearInput" placeholder="Graduation Year (Registration Only)">
+            </div>
 
-        <div class="form-check text-center d-flex align-items-center justify-content-center">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label text-white ms-2" for="flexCheckDefault">
-            Remember Me
-        </label>
-        </div>
+            <div class="form-check text-center d-flex align-items-center justify-content-center">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label text-white ms-2" for="flexCheckDefault">
+                Remember Me
+            </label>
+            </div>
 
-        <p class="fst-italic custom-text-shadow text-center" style="color: #9babe8">
-        Forgot Password?
-        </p>
+            <p class="fst-italic custom-text-shadow text-center" style="color: #9babe8">
+            Forgot Password?
+            </p>
 
-        <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-primary rounded-0 px-5" style="background-color: #1c233f; font-family: 'Times New Roman', Times, serif;"  onclick="window.location.href='countdown.php'">Join Now</button>
-        </div>
+            <div class="d-flex justify-content-center gap-3">
+                <button type="submit" name="action" value="login" class="btn btn-outline-light rounded-0 px-5" style="font-family: 'Times New Roman', Times, serif;">Login</button>
+                <button type="submit" name="action" value="register" class="btn btn-primary rounded-0 px-5" style="background-color: #1c233f; font-family: 'Times New Roman', Times, serif;">Join Now</button>
+            </div>
+        </form>
         </main>
 
         <footer class="dashboard-footer">

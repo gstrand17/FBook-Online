@@ -38,7 +38,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         
 	</head>
-	<body style="background-color: #f7df9f">
+	<body style="background-color: #ffffff">
         <nav class="navbar navbar-expand-lg uf-gradient px-3">
             <a class="navbar-brand" href="../index.php">
                 <img src="../assets/uf_logo.png" alt="UF Logo" style="height: 40px; width: auto;">
@@ -84,7 +84,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
         <div class="col text-center">
-            <h1 style="font-family: 'Lobster', cursive !important; padding-top: 10px; color: #ffffff; font-size: 100px">
+            <h1 style="font-family: 'Lobster', cursive !important; padding-top: 10px; color: #0021A5; font-size: 100px">
                 My F-Book Leaderboard
             </h1>
             <p><b>Discover who the most dedicated Gators are! Check out the top-ranked students and see which class is leading in campus participation.</b></p>
@@ -94,7 +94,7 @@
             <div class="row g-4">
                 
                 <div class="col-lg-7">
-                    <div class="card border-0 shadow-sm rounded-4" style="background-color: #fcf6e8;">
+                    <div class="card border-0 shadow-sm rounded-4" style="background-color: #f3e7cd;">
                         <div class="card-body p-4">
                             <h2 class="text-center mb-4" style="font-family: 'Lobster', cursive; color: #0021A5; font-size: 3rem;">Overall Student Leaderboard</h2>
                             
@@ -132,7 +132,7 @@
                 </div>
 
                 <div class="col-lg-5">
-                    <div class="card border-0 shadow-sm rounded-4" style="background-color: #fcf6e8;">
+                    <div class="card border-0 shadow-sm rounded-4" style="background-color: #f3e7cd;">
                         <div class="card-body p-4">
                             <h2 class="text-center mb-4" style="font-family: 'Lobster', cursive; color: #0021A5; font-size: 3rem;">Class Standings</h2>
                                 <div style="font-family: 'Lora', serif;">
