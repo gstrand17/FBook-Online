@@ -34,7 +34,6 @@ CREATE TABLE location (
   latitude     DECIMAL(10,7) NOT NULL,
   longitude    DECIMAL(10,7) NOT NULL,
   address      VARCHAR(255)  DEFAULT NULL,
-  map_api_id   VARCHAR(100)  DEFAULT NULL,
   PRIMARY KEY (location_id)
 );
 
