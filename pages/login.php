@@ -77,7 +77,7 @@
         </p>
 
         <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-primary rounded-0 px-5" style="background-color: #1c233f; font-family: 'Times New Roman', Times, serif;"  onclick="window.location.href='/pages/dashboards.php'">Join Now</button>
+            <button type="button" class="btn btn-primary rounded-0 px-5" style="background-color: #1c233f; font-family: 'Times New Roman', Times, serif;"  onclick="window.location.href='countdown.php'">Join Now</button>
         </div>
         </main>
 

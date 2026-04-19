@@ -2,21 +2,32 @@
   $title = "F-Book – University of Florida";
 
   session_start();
-  $grad_year = isset($_SESSION['graduation_year']) ? (int)$_SESSION['graduation_year'] : (int)date('Y') + 1;
 
-  // DB connection
   $db = new mysqli("localhost", "root", "", "fbook_online");
 
-  // Get total number of traditions available
+  $user_id = isset($_SESSION['user_id']) ? (int)$_SESSION['user_id'] : 0;
+
+  $grad_year = null;
+  if ($user_id > 0) {
+    $stmt = $db->prepare("SELECT graduation_year FROM users WHERE user_id = ?");
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $row = $stmt->get_result()->fetch_assoc();
+    $grad_year = $row && $row['graduation_year'] ? (int)$row['graduation_year'] : null;
+    $stmt->close();
+  }
+
+//   if ($grad_year === null) {
+//     die("<p style='color:red;padding:2rem;font-family:sans-serif;'>Error: No graduation year found for your account. Please update your profile.</p>");
+//   }
+
   $total_traditions = 0;
   $res = $db->query("SELECT COUNT(*) as total FROM traditions");
   if ($res) {
     $total_traditions = (int)$res->fetch_assoc()['total'];
   }
 
-  // Get number of traditions the logged-in user has completed
   $completed_count = 0;
-  $user_id = isset($_SESSION['user_id']) ? (int)$_SESSION['user_id'] : 0;
   if ($user_id > 0) {
     $stmt = $db->prepare("SELECT COUNT(comp_id) as completed FROM completion WHERE user_id = ?");
     $stmt->bind_param("i", $user_id);
@@ -25,8 +36,16 @@
     $stmt->close();
   }
 
-  // Progress percentage (avoid divide-by-zero)
   $progress_pct = $total_traditions > 0 ? round(($completed_count / $total_traditions) * 100) : 0;
+
+  // Fetch 8 random traditions for the carousel
+  $traditions = [];
+  $res = $db->query("SELECT tradition_name, thumbnail_url FROM traditions ORDER BY RAND() LIMIT 8");
+  if ($res) {
+    while ($row = $res->fetch_assoc()) {
+      $traditions[] = $row;
+    }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,164 +57,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* ── Countdown Section ── */
-        .countdown-section {
-            background: linear-gradient(135deg, #0021A5 0%, #1a3bc4 60%, #2a4fd4 100%);
-            padding: 2.5rem 3rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .countdown-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(250,70,22,.18) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .countdown-title {
-            font-family: 'Merriweather', serif;
-            font-size: clamp(1.6rem, 3vw, 2.4rem);
-            font-weight: 900;
-            color: #fff;
-            line-height: 1.2;
-            max-width: 240px;
-        }
-        .countdown-block {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: .5rem;
-        }
-        .countdown-units {
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-        }
-        .unit-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: .3rem;
-        }
-        .unit-label {
-            color: #fff;
-            font-size: .78rem;
-            font-weight: 700;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-        }
-        .cd-digits {
-            display: flex;
-            gap: 5px;
-        }
-        .cd-digit {
-            background: #0021A5;
-            border: 2px solid rgba(255,255,255,.25);
-            color: #fff;
-            font-family: 'Merriweather', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            width: 52px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            box-shadow: 0 4px 14px rgba(0,0,0,.3);
-        }
-        .cd-digit.orange {
-            background: #FA4616;
-            border-color: rgba(255,255,255,.3);
-        }
-        .year-input-row {
-            display: flex;
-            align-items: center;
-            gap: .7rem;
-            margin-top: .4rem;
-        }
-        .year-input-row label {
-            color: rgba(255,255,255,.85);
-            font-size: .85rem;
-            font-weight: 600;
-        }
-        .grad-year-input {
-            background: rgba(255,255,255,.15);
-            border: 2px solid rgba(255,255,255,.4);
-            color: #fff;
-            font-size: 1rem;
-            font-weight: 700;
-            font-family: 'Source Sans 3', sans-serif;
-            border-radius: 6px;
-            padding: .3rem .7rem;
-            width: 90px;
-            text-align: center;
-            outline: none;
-            transition: border-color .2s;
-        }
-        .grad-year-input:focus { border-color: #fff; }
-        .grad-year-input::placeholder { color: rgba(255,255,255,.5); }
-
-        /* ── Fix navbar overlap ── */
-        .main-content { padding-top: 70px; }
-
-        /* ── Traditions Progress Bar ── */
-        .progress-section {
-            background: #fff;
-            padding: 2rem 3rem;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        .progress-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: .75rem;
-        }
-        .progress-header h3 {
-            font-family: 'Merriweather', serif;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #0021A5;
-        }
-        .progress-header span {
-            font-size: .9rem;
-            font-weight: 600;
-            color: #555;
-        }
-        .tradition-progress-bar {
-            width: 100%;
-            height: 22px;
-            background: #e0e4f0;
-            border-radius: 999px;
-            overflow: hidden;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,.08);
-        }
-        .tradition-progress-fill {
-            height: 100%;
-            border-radius: 999px;
-            background: linear-gradient(90deg, #0021A5 0%, #FA4616 100%);
-            transition: width 1s cubic-bezier(.4,0,.2,1);
-            position: relative;
-        }
-        .tradition-progress-fill::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(255,255,255,.2) 0%, transparent 60%);
-            border-radius: 999px;
-        }
-        .progress-subtext {
-            margin-top: .5rem;
-            font-size: .82rem;
-            color: #777;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/countdown_page.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg uf-gradient px-3 py-2 fixed-top">
@@ -274,17 +136,12 @@
                     </div>
                 </div>
 
-                <!-- graduation_year seeded from users table via PHP session -->
                 <div class="year-input-row">
-                    <label for="grad-year">Graduation Year:</label>
-                    <input class="grad-year-input" type="number" id="grad-year"
-                           value="<?php echo htmlspecialchars($grad_year); ?>"
-                           min="2024" max="2035"/>
+                    <label>Graduation Year: <strong style="color:#fff;"><?php echo $grad_year; ?></strong></label>
                 </div>
             </div>
         </section>
 
-        <!-- Traditions Progress Bar -->
         <section class="progress-section">
             <div class="progress-header">
                 <h3>Traditions Progress</h3>
@@ -307,35 +164,21 @@
         </section>
 
         <section class="activities-section">
-
             <button class="arrow-btn left-arrow" type="button" aria-label="Previous">
                 <i class="fa-solid fa-circle-arrow-left"></i>
             </button>
 
-            <div class="activity-card">
-                <img src="../assets/chimes.png" alt="Listen to the Chimes of Century Tower">
-                <p>Listen to the Chimes<br>of Century Tower</p>
-            </div>
-
-            <div class="activity-card">
-                <img src="../assets/career_connections.jpg" alt="Career Connections">
-                <p>Career Connections</p>
-            </div>
-
-            <div class="activity-card">
-                <img src="../assets/lake_alice.jpeg" alt="Relax at Lake Alice">
-                <p>Relax at Lake Alice</p>
-            </div>
-
-            <div class="activity-card">
-                <img src="../assets/get_active.jpg" alt="Get Active">
-                <p>Get Active</p>
-            </div>
+            <?php foreach ($traditions as $t): ?>
+                <div class="activity-card">
+                    <img src="<?php echo htmlspecialchars($t['thumbnail_url']); ?>"
+                        alt="<?php echo htmlspecialchars($t['tradition_name']); ?>">
+                    <p><?php echo htmlspecialchars($t['tradition_name']); ?></p>
+                </div>
+            <?php endforeach; ?>
 
             <button class="arrow-btn right-arrow" type="button" aria-label="Next">
                 <i class="fa-solid fa-circle-arrow-right"></i>
             </button>
-
         </section>
 
         <div class="gator-mark">
@@ -371,7 +214,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Activity carousel
         (function () {
             const section  = document.querySelector('.activities-section');
             const cards    = Array.from(section.querySelectorAll('.activity-card'));
@@ -399,7 +241,6 @@
             render();
         })();
 
-        // Graduation countdown
         (function () {
             const GRAD_YEAR_FROM_DB = <?php echo (int)$grad_year; ?>;
 
@@ -433,10 +274,8 @@
                 setDigits('h0', 'h1', Math.floor((diff / 36e5) % 24));
             }
 
-            const input = document.getElementById('grad-year');
             updateCountdown(GRAD_YEAR_FROM_DB);
-            input.addEventListener('input', () => updateCountdown(parseInt(input.value, 10)));
-            setInterval(() => updateCountdown(parseInt(input.value, 10)), 60000);
+            setInterval(() => updateCountdown(GRAD_YEAR_FROM_DB), 60000);
         })();
     </script>
 </body>

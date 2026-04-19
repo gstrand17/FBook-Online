@@ -1,5 +1,15 @@
 <?php
   $title = "F-Book – University of Florida";
+
+  $db = new mysqli("localhost", "root", "", "fbook_online");
+  $traditions = [];
+  $res = $db->query("SELECT tradition_name, thumbnail_url FROM traditions ORDER BY RAND() LIMIT 8");
+  if ($res) {
+    while ($row = $res->fetch_assoc()) {
+      $traditions[] = $row;
+    }
+  }
+  $db->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,9 +34,6 @@
                 <a class="nav-link dropdown-toggle fw-semibold" href="index.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Home
                 </a>
-                <!-- <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#">Overview</a></li>
-                </ul> -->
             </div>
 
             <div class="nav-item dropdown px-2">
@@ -36,7 +43,6 @@
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="pages/catalog.php">My F-Book</a></li>
                 </ul> 
-                <!-- NEEDED!!! Redirect to login page if a user session isn't started -->
             </div>
 
             <div class="nav-item dropdown px-2">
@@ -53,7 +59,6 @@
                 <a class="nav-link dropdown-toggle fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Connect
                 </a>
-                <!-- NEEDED!!! Deciding on that this header with contain -->
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="#">Events</a></li>
                 </ul>
@@ -85,35 +90,21 @@
         </section>
 
         <section class="activities-section">
-
             <button class="arrow-btn left-arrow" type="button" aria-label="Previous">
                 <i class="fa-solid fa-circle-arrow-left"></i>
             </button>
 
-            <div class="activity-card">
-                <img src="assets/chimes.png" alt="Listen to the Chimes of Century Tower">
-                <p>Listen to the Chimes<br>of Century Tower</p>
-            </div>
-
-            <div class="activity-card">
-                <img src="assets/career_connections.jpg" alt="Career Connections">
-                <p>Career Connections</p>
-            </div>
-
-            <div class="activity-card">
-                <img src="assets/lake_alice.jpeg" alt="Relax at Lake Alice">
-                <p>Relax at Lake Alice</p>
-            </div>
-
-            <div class="activity-card">
-                <img src="assets/get_active.jpg" alt="Get Active">
-                <p>Get Active</p>
-            </div>
+            <?php foreach ($traditions as $t): ?>
+                <div class="activity-card">
+                    <img src="<?php echo htmlspecialchars($t['thumbnail_url']); ?>"
+                        alt="<?php echo htmlspecialchars($t['tradition_name']); ?>">
+                    <p><?php echo htmlspecialchars($t['tradition_name']); ?></p>
+                </div>
+            <?php endforeach; ?>
 
             <button class="arrow-btn right-arrow" type="button" aria-label="Next">
                 <i class="fa-solid fa-circle-arrow-right"></i>
             </button>
-
         </section>
 
         <div class="gator-mark">
@@ -149,7 +140,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // activity carousel 
         (function () {
             const section  = document.querySelector('.activities-section');
             const cards    = Array.from(section.querySelectorAll('.activity-card'));
