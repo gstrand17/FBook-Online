@@ -59,39 +59,68 @@
 
         <h1 class="text-center mt-5 text-white" style="-webkit-text-stroke: 1px gray; font-size: 50px; padding-bottom: 40px;">Get Ready To Start Your F-Book Journey</h1>
         
-        <form action="register.php" method="POST">
-            <div class="mb-3">
-            <input type="text" class="form-control" name="name" id="nameInput" placeholder="Full Name (Registration Only)">
+        <form action="register.php" method="POST" id="authForm">
+            <div class="mb-3 register-only" style="display: none;">
+                <input type="text" class="form-control" name="name" id="nameInput" placeholder="Full Name">
             </div>
             <div class="mb-3">
-            <input type="text" class="form-control" name="username" id="usernameInput" placeholder="Username" required>
+                <input type="text" class="form-control" name="username" id="usernameInput" placeholder="Username" required>
+            </div>
+            <div class="mb-3 register-only" style="display: none;">
+                <input type="email" class="form-control" name="email" id="emailInput" placeholder="Email">
             </div>
             <div class="mb-3">
-            <input type="email" class="form-control" name="email" id="emailInput" placeholder="Email (Registration Only)">
+                <input type="password" class="form-control" name="password" id="passwordInput" placeholder="Password" required>
             </div>
-            <div class="mb-3">
-            <input type="password" class="form-control" name="password" id="passwordInput" placeholder="Password" required>
-            </div>
-            <div class="mb-3">
-            <input type="number" class="form-control" name="graduation_year" id="yearInput" placeholder="Graduation Year (Registration Only)">
+            <div class="mb-3 register-only" style="display: none;">
+                <input type="number" class="form-control" name="graduation_year" id="yearInput" placeholder="Graduation Year">
             </div>
 
             <div class="form-check text-center d-flex align-items-center justify-content-center">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label text-white ms-2" for="flexCheckDefault">
-                Remember Me
-            </label>
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label text-white ms-2" for="flexCheckDefault">
+                    Remember Me
+                </label>
             </div>
 
             <p class="fst-italic custom-text-shadow text-center" style="color: #9babe8">
-            Forgot Password?
+                Forgot Password?
             </p>
 
-            <div class="d-flex justify-content-center gap-3">
-                <button type="submit" name="action" value="login" class="btn btn-outline-light rounded-0 px-5" style="font-family: 'Times New Roman', Times, serif;">Login</button>
-                <button type="submit" name="action" value="register" class="btn btn-primary rounded-0 px-5" style="background-color: #1c233f; font-family: 'Times New Roman', Times, serif;">Join Now</button>
+            <div class="d-flex flex-column align-items-center gap-3">
+                <div class="d-flex justify-content-center gap-3 w-100">
+                    <button type="submit" id="loginBtn" name="action" value="login" class="btn btn-outline-light rounded-0 px-5" style="font-family: 'Times New Roman', Times, serif;">Login</button>
+                    <button type="submit" id="registerBtn" name="action" value="register" class="btn btn-primary rounded-0 px-5" style="background-color: #1c233f; font-family: 'Times New Roman', Times, serif; display: none;">Join Now</button>
+                </div>
+                <button type="button" id="toggleBtn" class="btn btn-link text-white text-decoration-none" style="font-family: 'Times New Roman', Times, serif;">Sign Up Instead!</button>
             </div>
         </form>
+
+        <script>
+            const toggleBtn = document.getElementById('toggleBtn');
+            const loginBtn = document.getElementById('loginBtn');
+            const registerBtn = document.getElementById('registerBtn');
+            const registerOnlyFields = document.querySelectorAll('.register-only');
+            let isRegisterMode = false;
+
+            toggleBtn.addEventListener('click', () => {
+                isRegisterMode = !isRegisterMode;
+                
+                registerOnlyFields.forEach(field => {
+                    field.style.display = isRegisterMode ? 'block' : 'none';
+                });
+
+                if (isRegisterMode) {
+                    loginBtn.style.display = 'none';
+                    registerBtn.style.display = 'block';
+                    toggleBtn.textContent = 'Back to Login';
+                } else {
+                    loginBtn.style.display = 'block';
+                    registerBtn.style.display = 'none';
+                    toggleBtn.textContent = 'Sign Up Instead!';
+                }
+            });
+        </script>
         </main>
 
         <footer class="dashboard-footer">
