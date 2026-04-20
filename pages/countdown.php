@@ -97,7 +97,8 @@
                     Connect
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#">Events</a></li>
+                    <li><a class="dropdown-item" href="https://connect.ufalumni.ufl.edu/students/home">STAT Website</a></li>
+                    <li><a class="dropdown-item" href="https://connect.ufalumni.ufl.edu/students/events/calendar">Upcoming Events</a></li>
                 </ul>
             </div>
 

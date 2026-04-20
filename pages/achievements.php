@@ -205,6 +205,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         
@@ -242,11 +243,12 @@
                 </div>
                 
                 <div class="nav-item dropdown px-2">
-                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Connect
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Event</a></li>
+                        <li><a class="dropdown-item" href="https://connect.ufalumni.ufl.edu/students/home">STAT Website</a></li>
+                        <li><a class="dropdown-item" href="https://connect.ufalumni.ufl.edu/students/events/calendar">Upcoming Events</a></li>
                     </ul>
                 </div>
                 <a class="btn btn-primary" href="#" role="button">Logout</a>
@@ -254,6 +256,12 @@
         </nav>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <main class="main-content">
+             <div class="col text-center">
+                        <h1 style="font-family: 'Lobster', cursive !important; padding: 20px; color: #0021A5; font-size: 84px">
+                            Achievements
+                        </h1>
+                        <p class="catalog-subtitle">Complete F-book traditions to qualify for graduation regalia! How many can you unlock?</p>
+                    </div>
             <div class="container py-4">
             <div class="row">
 
