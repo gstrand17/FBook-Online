@@ -91,11 +91,12 @@
                     </ul>
                 </div>
                 <div class="nav-item dropdown px-2">
-                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Connect
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Event</a></li>
+                        <li><a class="dropdown-item" href="https://connect.ufalumni.ufl.edu/students/home">STAT Website</a></li>
+                        <li><a class="dropdown-item" href="https://connect.ufalumni.ufl.edu/students/events/calendar">Upcoming Events</a></li>
                     </ul>
                 </div>
                 <a class="btn btn-primary" href="#" role="button">Logout</a>

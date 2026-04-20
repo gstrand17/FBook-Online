@@ -30,6 +30,7 @@
         <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>   
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/leaderboard.css">
+        <link rel="stylesheet" href="../css/catalog.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         
@@ -71,11 +72,12 @@
                 </div>
                 
                 <div class="nav-item dropdown px-2">
-                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Connect
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Event</a></li>
+                        <li><a class="dropdown-item" href="https://connect.ufalumni.ufl.edu/students/home">STAT Website</a></li>
+                        <li><a class="dropdown-item" href="https://connect.ufalumni.ufl.edu/students/events/calendar">Upcoming Events</a></li>
                     </ul>
                 </div>
                 <a class="btn btn-primary" href="#" role="button">Logout</a>
@@ -84,10 +86,10 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
         <div class="col text-center">
-            <h1 style="font-family: 'Lobster', cursive !important; padding-top: 10px; color: #0021A5; font-size: 100px">
-                My F-Book Leaderboard
+            <h1 style="font-family: 'Lobster', cursive !important; padding: 20px; color: #0021A5; font-size: 84px">
+                F-Book Leaderboard
             </h1>
-            <p><b>Discover who the most dedicated Gators are! Check out the top-ranked students and see which class is leading in campus participation.</b></p>
+            <p class="catalog-subtitle">Discover who the most dedicated Gators are! Check out the top-ranked students and see which class is leading in campus participation.</p>
         </div>
 
         <div class="container my-5">
